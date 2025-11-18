@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Registering</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            /* Set background GIF */
+            background-image: url('./assets/confetti.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+        }
+
+        /* Separate div for content */
+        .content {
+            text-align: center;
+            margin: 50px;
+            opacity: 0.8; /* Set opacity for content */
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        p {
+            color: #000000;
+            font-size: 14px;
+        }
+
+        img {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+        /* Make the word "BLITZ" bold */
+        .bold-text {
+            font-weight: bold;
+        }
+
+        /* Social icon size */
+        .social-icon {
+            font-size: 38px; /* Adjust the size as needed */
+            color: black;
+            margin-right: 10px; /* Add some spacing between icons */
+        }
+
+        /* Boxes styling */
+        .box-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #ffffff;
+            margin: 0 10px; /* Adjust spacing between boxes */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease; /* Add smooth transition effect */
+            display: flex;
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .box img {
+            max-width: 95%;
+            height: auto;
+            transition: transform 0.3s ease; /* Add smooth transition effect */
+        }
+
+        .box:hover img {
+            transform: scale(1.1); /* Scale up the image on hover */
+           
+            
+        }
+
+        .sponsor p{
+            color: black;
+font-family: cursive;            font-size: 20px;
+        }
+
+
+    </style>
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ezmoN1peJCJl4LhtwzJO81Cx1C4iG6Hf8FfmQxMQNqbyWyOv8X2y5MPkAY54mP63" crossorigin="anonymous">
+    <!-- Favicon for the entire page -->
+    <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="content">
+        <img src="./assets/untit.png" alt="Confirmation Image">
+        <h1>Thank You for Registering!</h1>
+        <p>Your registration has been successfully submitted. We look forward to seeing you at <span class="bold-text">BLITZ</span> '24 🏸!</p>
+
+        <!-- Follow us on Instagram -->
+        <p>Follow us on Instagram:
+            <a href="https://www.instagram.com/dsym.mv3/" target="_blank">
+                <i class="fa fa-instagram social-icon"></i>
+            </a>
+        </p>
+
+        <!-- Follow us on YouTube -->
+        <p>Subscribe to our YouTube channel:
+            <a href="https://www.youtube.com/@DSYMMayurViharPhaseIII" target="_blank">
+                <i class="fa fa-youtube-play social-icon"></i>
+            </a>
+        </p>
+
+<div class="sponsor">
+        <p>Chief Sponsor</p>
+</div>
+        <!-- Boxes -->
+        <div class="box-container">
+            <div class="box" onclick="window.open('https://www.dynamicrack.co.in/index.html', '_blank')">
+                <img src="./assets/dynamic rack logo.png" alt="Image 1">
+            </div>
+          
+        </div>
+        <div class="box-container">
+            <div class="box" onclick="window.open('https://www.federalbank.co.in/', '_blank')">
+                <img src="./assets/fed logo.jpg" alt="Image 1">
+            </div>
+          
+        </div>
+    </div>
+</body>
+
+</html>

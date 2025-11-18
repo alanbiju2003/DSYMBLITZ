@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Badminton Tournament Registration</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 10px;
+    }
+
+    #categoryDetails {
+        display: none;
+        margin-top: 10px;
+    }
+    .required::after {
+        content: '*';
+        color: red;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    header img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .intro-section {
+        background-color: #fffdeb;
+        padding: 20px;
+        border: solid rgb(186, 186, 183) 0.1px;
+    }
+
+    form {
+        max-width:400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-group {
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .input-group label {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        display: block;
+        font-size: 15px;
+    }
+
+    .input-group input{
+        height: 25px;
+        width: 330px;
+        border-radius: 10px;
+        border: 2px solid #000000;
+        padding: 5px;
+    }
+
+    #categoryBox {
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+    #categoryBox input{
+        margin: 10px;
+    }
+
+    .category-details-box {
+        border: 2px solid #000000;
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #ffffff;
+    }
+
+    #categoryDetails input {
+        height: 25px;
+        width: 300px;
+        border-radius: 10px;
+        border: 2px solid #000000;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+    #categoryDetails label {
+        margin-bottom: 5px;
+        display: block;
+        font-size: 15px;
+        margin-top: 15px;
+    }
+
+    .reg-amt{
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .reg-amt h3{
+        font-size: 20px;
+    }
+
+    .qr-code-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .qr-code-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .register-button button{
+        padding: 10px;
+        margin: 10px;
+        background-color: #acb2ac;
+        color: rgb(0, 0, 0);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 310px;
+        height: 30px;
+    }
+
+
+    .intro-section a {
+        word-wrap: break-word;
+    }
+
+
+    .mention{
+        font-size: 9px;
+        margin-left: 60%;
+    }
+
+       /* Responsive Styles */
+       @media only screen and (max-width: 600px) {
+        .input-group input {
+            width: calc(100% - 12px);
+        }
+
+        .register-button button {
+            width: 100%;
+            max-width: none;
+        }
+    }
+
+    
+</style>
+</head>
+<body>
+<header>
+    <img src="assets/banner.png" alt="Tournament Banner">
+</header>
+
+<div class="intro-section">
+    <h1>BLITZ '24 🏸</h1>
+    <p>
+        Hey youu!! Welcome to BLITZ '24 - Ace the Court✨, an exciting badminton tournament organized by DSYM
+        Mayur Vihar Phase 3 Assumption Forane Church.
+        We invite badminton enthusiasts of all skill levels to participate in this thrilling event where
+        sportsmanship and skill collide on the court.💥
+    </p>
+    <p>
+        <strong>Details:</strong><br>
+        - <strong>Date:</strong> 21st April (Sunday)<br>
+        - <strong>Time:</strong> 12 PM to 5 PM<br>
+        - <strong>Registration Deadline:</strong> 18 April <br>
+        - <strong>Singles Registration fees - </strong> ₹500/- <br>
+        - <strong>Doubles Registration fees (for one team) -</strong> ₹1000/- <br>
+
+    For more information regarding the tournament , please go through the attached document. 
+    <a href="https://drive.google.com/file/d/1KTWLsCQkUH2azHigq0xbm5fIcCp7nHNN/view?usp=drivesdk">https://drive.google.com/file/d/1KTWLsCQkUH2azHigq0xbm5fIcCp7nHNN/view?usp=drivesdk</a>
+</p>    
+    <p>
+        <strong>For any queries . contact -: </strong><br>
+        <strong>Convenor:</strong> Jeff Joseph - 99710 67435<br>
+        <strong>Joint Convenor:</strong> Anjaly Emmanuel - 9999550943
+    </p>
+    <p>
+        Grab your racket, and get ready for an exciting badminton showdown. Don't miss out on the fun and
+        competition! See you on the court! Good luck!🏅
+    </p>
+</div>
+
+<form action="" id="form_table">
+    <div id="registrationForm">
+        <div class="input-group">
+            <label for="name">Name<span class="required"></span>:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="input-group">
+            <label for="email">Email<span class="required"></span>:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="input-group">
+            <label for="age">Age<span class="required"></span>:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+
+        <div class="input-group">
+            <label for="contact">Contact Number<span class="required"></span>:</label>
+            <input type="text" id="contact" name="contact" required>
+        </div>
+
+        <div class="input-group">
+            <label for="denomination">Christian Denomination / Rite<span class="required"></span>:</label>
+            <input type="text" id="denomination" name="denomination" required>
+        </div>
+
+        <div class="input-group">
+            <label for="parishName">Parish Name<span class="required"></span>:</label>
+            <input type="text" id="parishName" name="parishName" required>
+        </div>
+
+        <div class="input-group">
+            <label for="parishLocation">Parish Location<span class="required"></span>:</label>
+            <input type="text" id="parishLocation" name="parishLocation" required>
+        </div>
+
+        <div class="input-group">
+            <label for="priestName">Parish Priest's Name<span class="required"></span>:</label>
+            <input type="text" id="priestName" name="priestName" required>
+        </div>
+
+        <div class="input-group">
+            <label for="priestMobile">Parish Priest's Mobile Number<span class="required"></span>:</label>
+            <input type="text" id="priestMobile" name="priestMobile" required>
+        </div>
+
+        <div id="categoryBox">
+            <label>Categories (Maximum 3)<span class="required"></span>:</label><br><br><hr>
+            <!-- <input type="checkbox" class="category" value="Men's Doubles" name="category">
+            <label for="menDoubles"> Men's Doubles</label><br><hr> -->
+
+            <input type="checkbox" class="category" value="40+ Men's Doubles" name="category">
+            <label for="fortyDoubles"> 40+ Men's Doubles</label><br><hr>
+           
+            <!-- <input type="checkbox" class="category" value="Mixed Doubles" name="category"> -->
+            <!-- <label for="mixedDoubles"> Mixed Doubles</label><br><hr> -->
+<!--            
+            <input type="checkbox" class="category" value="Men's Singles" name="category">
+            <label for="menSingles"> Men's Singles</label><br><hr> -->
+
+
+            <input type="checkbox" class="category" value="Women's Singles" name="category">
+            <label for="womenSingles"> Women's Singles</label><br><hr>
+        </div>
+
+        <div id="categoryDetails"></div>
+
+        <div class="reg-amt">
+            <h3>REGISTRATION AMOUNT</h3>
+            <label>Registration Amount <span></span>:</label><br>
+            <span id="totalFee"></span><br>
+        </div>
+
+        <!-- QR Code for payment -->
+        <div class="qr-code-container">
+            <h2>Scan the QR code below to make the payment:</h2>
+            <h3>UPI ID : christeena1310@okhdfcbank</h3>
+            <img src="./assets/payment qr.jpg" alt="Payment QR Code">
+        </div>
+        
+        
+        <div class="input-group">
+            <label for="photo">Upload Photo of the payment <span class="required"></span>:</label>
+            <input type="file" id="photo" accept="image/*" name="photo" required>
+        </div>
+
+        <div class="register-button">
+            <div id="loader"><img src="assets/Half circle.gif" alt=""></div>
+<!--            <button id="submit-btn" type="submit">REGISTERATION CLOSED</button> -->
+            <button id="submitn" type="subm">REGISTERATION CLOSED</button>
+
+        </div>
+    </div>
+
+    <div class="mention">
+        <p>Website Made by ALAN BIJU</p>
+    </div>
+</form>
+
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-storage.js"></script>
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyA1P_exgPoUdt_8Vz-HcOQ0EbeRwFt5DIE",
+        authDomain: "dsymblitzz.firebaseapp.com",
+        databaseURL: "https://dsymblitzz-default-rtdb.firebaseio.com",
+        projectId: "dsymblitzz",
+        storageBucket: "dsymblitzz.appspot.com",
+        messagingSenderId: "229379502428",
+        appId: "1:229379502428:web:7e7011f119a71080e95199",
+        measurementId: "G-ZVLY97DE7C"
+    };
+    
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkboxes = document.querySelectorAll('.category');
+        const categoryDetails = document.getElementById('categoryDetails');
+        const submit = document.getElementById('submit-btn');
+        const totalFee = document.getElementById('totalFee');
+        let checkedCount = 0;
+        const loader = document.getElementById('loader');
+        let rollNumber = 101;
+        const categories = [];
+
+        loader.style.display = 'none';
+
+     
+
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    checkedCount++;
+                    if (checkedCount <= 3) {
+                        showCategoryDetails(this.value);
+                    } else {
+                        this.checked = false;
+                        checkedCount--;
+                        alert("You can only select up to 3 categories.");
+                    }
+                } else {
+                    checkedCount--;
+                    hideCategoryDetails(this.value);
+                }
+                calculateTotalFee();
+            });
+        });
+
+
+
+        
+        function showCategoryDetails(category) {
+            let categoryFields = '';
+            if (!category.includes("Singles")) {
+                categoryFields = `
+                    <div class="category-details-box" id="${category}-details">
+                        <h3>${category}</h3>
+                        <label for="${category}-partner-name">Name of your Doubles player<span class="required"></span>:</label>
+                        <input type="text" id="${category}-partner-name" required><br>
+                        <label for="${category}-partner-age">Age of your Doubles player<span class="required"></span>:</label>
+                        <input type="number" id="${category}-partner-age" required><br>
+                        <label for="${category}-partner-contact">Contact no. of Doubles player<span class="required"></span>:</label>
+                        <input type="text" id="${category}-partner-contact" required><br>
+                        <label for="${category}-partner-denomination">Christian Denomination / Rite of Doubles player<span class="required"></span>:</label>
+                        <input type="text" id="${category}-partner-denomination" required><br>
+                        <label for="${category}-partner-parishName">Name of Doubles player's parish<span class="required"></span>:</label>
+                        <input type="text" id="${category}-partner-parishName" required><br>
+                        <label for="${category}-partner-parishLocation">Location of Doubles player's parish<span class="required"></span>:</label>
+                        <input type="text" id="${category}-partner-parishLocation" required><br>
+                        <label for="${category}-partner-priestName">Name of Doubles player's Parish Priest/Pastor<span class="required"></span>:</label>
+                        <input type="text" id="${category}-partner-priestName" required><br>
+                        <label for="${category}-partner-priestMobile">Mobile No. of Doubles player's Parish Priest /Pastor<span class="required"></span>:</label>
+                        <input type="text" id="${category}-partner-priestMobile" required><br>
+                    </div>
+                `;
+
+                categoryDetails.innerHTML += categoryFields;
+                categoryDetails.style.display = 'block';
+            }
+        }
+
+        function hideCategoryDetails(category) {
+            const categoryDiv = document.getElementById(`${category}-details`);
+            if (categoryDiv) {
+                categoryDiv.remove();
+                if (categoryDetails.innerHTML === '') {
+                    categoryDetails.style.display = 'none';
+                }
+            }
+        }
+
+        function calculateTotalFee() {
+            var total = 0;
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    if (checkbox.value.includes("Doubles")) {
+                        total += 1000;
+                    } else {
+                        total += 500;
+                    }
+                }
+            });
+            totalFee.textContent = total + ' INR';
+        }
+
+        document.getElementById('form_table').addEventListener('submit', function(e) {
+            e.preventDefault();
+         
+            const selectedCategories = document.querySelectorAll('.category:checked');
+            if (selectedCategories.length === 0) {
+                alert("Please select at least one category.");
+                return;
+            }
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.style.display = 'none'; // Hide the submit button
+            loader.style.display = 'block';   
+            submit.disabled = true;
+
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    categories.push(checkbox.value);
+                }
+            });
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                age: document.getElementById('age').value,
+                contact: document.getElementById('contact').value,
+                denomination: document.getElementById('denomination').value,
+                parishName: document.getElementById('parishName').value,
+                parishLocation: document.getElementById('parishLocation').value,
+                priestName: document.getElementById('priestName').value,
+                priestMobile: document.getElementById('priestMobile').value,
+                categories: []
+            };
+
+            categories.forEach(function(category) {
+                const categoryData = {
+                    category: category
+                };
+                if (!category.includes("Singles")) {
+                    categoryData.partnerName = document.getElementById(`${category}-partner-name`).value;
+                    categoryData.partnerAge = document.getElementById(`${category}-partner-age`).value;
+                    categoryData.partnerContact = document.getElementById(`${category}-partner-contact`).value;
+                    categoryData.partnerDenomination = document.getElementById(`${category}-partner-denomination`).value;
+                    categoryData.partnerParishName = document.getElementById(`${category}-partner-parishName`).value;
+                    categoryData.partnerParishLocation = document.getElementById(`${category}-partner-parishLocation`).value;
+                    categoryData.partnerPriestName = document.getElementById(`${category}-partner-priestName`).value;
+                    categoryData.partnerPriestMobile = document.getElementById(`${category}-partner-priestMobile`).value;
+                }
+                formData.categories.push(categoryData);
+            });
+
+            const photoFile = document.getElementById('photo').files[0];
+            const storageRef = storage.ref(`payment_photos/${photoFile.name}`);
+
+            // Upload the file to Firebase Storage
+            storageRef.put(photoFile).then(function(snapshot) {
+                console.log('Uploaded a blob or file!');
+                // Get the download URL of the uploaded file
+                storageRef.getDownloadURL().then(function(photoURL) {
+                    // Include the photoURL in formData
+                    formData.photoURL = photoURL;
+
+                    // Save form data to Firestore
+                    db.collection('registrations').add(formData)
+                        .then(function(docRef) {
+                            console.log('Document written with ID: ', docRef.id);
+                        })
+                        .catch(function(error) {
+                            console.error('Error adding document: ', error);
+                        });
+
+                    setTimeout(function() {
+                        window.location.href = 'registered.html';
+                    }, 3000);
+                }).catch(function(error) {
+                    console.error('Error getting download URL: ', error);
+                });
+            }).catch(function(error) {
+                console.error('Error uploading file: ', error);
+                // Handle error
+            });
+        });
+    });
+
+
+ 
+
+</script>
+
+</body>
+</html>

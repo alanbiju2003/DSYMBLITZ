@@ -1,0 +1,80 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="export">Export CSV</button>
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyA1P_exgPoUdt_8Vz-HcOQ0EbeRwFt5DIE",
+        authDomain: "dsymblitzz.firebaseapp.com",
+        databaseURL: "https://dsymblitzz-default-rtdb.firebaseio.com",
+        projectId: "dsymblitzz",
+        storageBucket: "dsymblitzz.appspot.com",
+        messagingSenderId: "229379502428",
+        appId: "1:229379502428:web:7e7011f119a71080e95199",
+        measurementId: "G-ZVLY97DE7C"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+</script>
+<script>
+
+let arr = []
+
+const objectToCsv = function (data) {   
+     const csvRows = [];
+     const headers = Object.keys(data[0]);
+     csvRows.push(headers.join(','));
+  
+     for (const row of data) {
+         const values = headers.map(header => {
+             const val = row[header]
+             return `"${val}"`;
+         });
+  
+         csvRows.push(values.join(','));
+     }
+  
+     return csvRows.join('\n');
+ };
+  
+
+const getApiCall = async() => {
+    const mainData = await db.collection("registrations").get().then((snapshot) => {
+    downloadCSVFile(objectToCsv(snapshot.docs.map((doc) => doc.data())))
+    
+})
+}
+
+ 
+function downloadCSVFile(csv_data) {
+ 
+ CSVFile = new Blob([csv_data], { type: "text/csv" });
+ let temp_link = document.createElement('a');
+
+ temp_link.download = "GfG.csv";
+ let url = window.URL.createObjectURL(CSVFile);
+ temp_link.href = url;
+
+ temp_link.style.display = "none";
+ document.body.appendChild(temp_link);
+
+ temp_link.click();
+ document.body.removeChild(temp_link);
+}
+const btn = document.getElementById('export')
+btn.addEventListener('click', () => {
+    getApiCall()
+   
+})
+
+</script>
+</html>
